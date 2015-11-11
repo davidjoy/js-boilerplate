@@ -6,9 +6,9 @@ const worldSelector = state => state.world
 export const helloWorldSelector = createSelector(
     helloSelector,
     worldSelector,
-    function(hello, world) {
-      return {
-        helloWorld: hello + " " + world + "!"
-      }
+    function (hello, world) {
+        return {
+            helloWorld: hello + " " + world + "!"
+        }
     }
 )
