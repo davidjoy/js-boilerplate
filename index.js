@@ -1,2 +1,5 @@
-require("./style.css");
-document.write(require("./content.js"));
+import "./style.css";
+
+import meh from './content.js';
+
+document.write(meh);

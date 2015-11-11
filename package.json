@@ -1,14 +1,28 @@
 {
-  "name": "renote",
+  "name": "js-boilerplate",
   "version": "1.0.0",
-  "description": "React-based prototype of the Noteflight notation engine.",
+  "description": "Boilerplate for JavaScript projects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./node_modules/better-npm-run dev",
+    "test": "node ./node_modules/better-npm-run test"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100
+      }
+    },
+    "test": {
+      "command": "echo \"Error: no test specified\" && exit 1"
+    }
   },
   "author": "David Joy",
   "license": "ISC",
   "dependencies": {
+    "babel": "^5.8.29",
+    "babel-plugin-typecheck": "^2.0.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-redux": "^4.0.0",
@@ -16,9 +30,16 @@
     "reselect": "^2.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.1.4",
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-runtime": "^5.8.29",
+    "better-npm-run": "0.0.4",
     "css-loader": "^0.22.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.4"
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
   }
 }
