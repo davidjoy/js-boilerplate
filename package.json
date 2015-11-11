@@ -1,0 +1,24 @@
+{
+  "name": "renote",
+  "version": "1.0.0",
+  "description": "React-based prototype of the Noteflight notation engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Joy",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4",
+    "reselect": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.1.4",
+    "css-loader": "^0.22.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.4"
+  }
+}
