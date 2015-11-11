@@ -9,7 +9,7 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+      "command": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base public/ --inline --progress --colors",
       "env": {
         "UV_THREADPOOL_SIZE": 100
       }
@@ -38,6 +38,8 @@
     "css-loader": "^0.22.0",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+    "redux-devtools": "^2.1.5",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.4",
     "webpack-dev-server": "^1.12.1"
