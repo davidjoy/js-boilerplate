@@ -1,4 +1,4 @@
-# js-boilerplate
+# react-et-al-boilerplate
 
 Boilerplate code for getting a React/Redux JavaScript application up and running that demonstrates the following:
 
