@@ -8,6 +8,8 @@ export const helloWorldSelector = createSelector(
     worldSelector,
     function (hello, world) {
         return {
+            hello: hello,
+            world: world,
             helloWorld: hello + " " + world + "!"
         }
     }

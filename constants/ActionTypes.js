@@ -1,0 +1,2 @@
+export const UPDATE_HELLO = 'UPDATE_HELLO'
+export const UPDATE_WORLD = 'UPDATE_WORLD'
