@@ -24,10 +24,12 @@ Boilerplate code for getting a React/Redux JavaScript application up and running
 
 ## Notes
 
-I'll never claim this is the "right" way to set up a project - it makes sense to me though.  This is what I've cobbled together from my understanding of the above modules and the others that you'll find in package.json.  That said, I tried to follow their best practices and keep things simple but extensible.   
+I won't claim this is the "right" way to set up a project - it makes sense to me though.  This is what I've cobbled together from my understanding of the above modules and the others that you'll find in package.json.  That said, I tried to follow their best practices and keep things simple but extensible.   
 
 I cribbed a lot off of https://github.com/erikras/react-redux-universal-hot-example for a lot of the more nitty-gritty configuration.  Thanks to erikras for such a stellar example of a ton of technologies.
 
 ## Next
 
-Adding asynchronous actions and a little express server.
+- Adding asynchronous actions, isomorphic-fetch and a little express server.
+- memoizee for creating reselect selectors with memoized array elements
+- redux-router / react-router
