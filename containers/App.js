@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { updateHello, updateWorld } from '../actions/HelloWorldActions'
-import { helloWorldSelector } from '../selectors/HelloWorldSelector'
+import { Link } from 'react-router';
+
+import { rootSelector } from '../selectors/RootSelector'
 
 export default class App extends Component {
     render() {
-        const dispatch = this.props.dispatch
         return (
             <div>
-                <div>{this.props.helloWorld}</div>
-                <input type="text" defaultValue={this.props.hello}
-                    onChange={event =>
-                        dispatch(updateHello(event.target.value))
-                    } />
+                <div style={{marginBottom: 10}}>
+                    <Link to={'/'}>Home</Link>&nbsp;|&nbsp;
+                    <Link to={'/helloworld'}>Hello World</Link>
+                </div>
 
-                <input type="text" defaultValue={this.props.world}
-                    onChange={event =>
-                        dispatch(updateWorld(event.target.value))
-                    } />
+                <div>
+                    {this.props.children}
+                </div>
             </div>
-
-        );
+        )
     }
 }
 
-export default connect(helloWorldSelector)(App)
+export default connect(rootSelector)(App)

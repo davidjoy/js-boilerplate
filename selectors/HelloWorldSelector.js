@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
-const helloSelector = state => state.hello
-const worldSelector = state => state.world
+const helloSelector = state => state.helloWorld.hello
+const worldSelector = state => state.helloWorld.world
 
 export const helloWorldSelector = createSelector(
     helloSelector,
@@ -10,7 +10,7 @@ export const helloWorldSelector = createSelector(
         return {
             hello: hello,
             world: world,
-            helloWorld: hello + " " + world + "!"
+            greeting: hello + " " + world + "!"
         }
     }
 )
