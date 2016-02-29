@@ -1,29 +1,21 @@
 {
-    "name": "js-boilerplate",
+    "name": "node-boilerplate",
     "version": "1.0.0",
-    "description": "Boilerplate for JavaScript projects.",
-    "main": "index.js",
+    "description": "Boilerplate for node web applications.",
+    "main": "server.js",
     "scripts": {
-        "dev": "node ./node_modules/better-npm-run dev",
-        "test": "node ./node_modules/better-npm-run test"
-    },
-    "betterScripts": {
-        "dev": {
-            "command": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base public/ --inline --progress --colors",
-            "env": {
-                "UV_THREADPOOL_SIZE": 100
-            }
-        },
-        "test": {
-            "command": "echo \"Error: no test specified\" && exit 1"
-        }
+        "test": "NODE_ENV=test mocha --require ./test/test-init --compilers js:babel/register --recursive",
+        "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --require ./test/test-init --recursive",
+        "start": "node devServer",
+        "build:start": "NODE_ENV=production node prodServer",
+        "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile --colors"
     },
     "author": "David Joy",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
-        "babel": "^5.8.34",
-        "babel-plugin-typecheck": "^2.0.0",
         "history": "^1.13.1",
+        "isomorphic-fetch": "^2.2.0",
+        "memoizee": "^0.3.9",
         "react": "^0.14.3",
         "react-dom": "^0.14.3",
         "react-redux": "^4.0.0",
@@ -33,20 +25,36 @@
         "reselect": "^2.0.1"
     },
     "devDependencies": {
+        "autoprefixer": "^6.1.1",
+        "babel": "^5.8.34",
         "babel-core": "^5.8.34",
         "babel-loader": "^5.4.0",
         "babel-plugin-react-transform": "^1.1.1",
-        "babel-runtime": "^5.8.34",
-        "better-npm-run": "0.0.4",
+        "chai": "^3.2.0",
         "css-loader": "^0.22.0",
+        "express": "^4.13.3",
+        "extract-text-webpack-plugin": "^0.8.2",
+        "html-webpack-plugin": "^1.6.1",
+        "isparta": "^4.0.0",
+        "jsdom": "^6.5.1",
+        "json-loader": "^0.5.3",
         "less": "^2.5.3",
         "less-loader": "^2.2.1",
+        "mocha": "^2.3.3",
+        "mocha-jsdom": "^1.0.0",
+        "postcss-loader": "^0.6.0",
+        "react-addons-test-utils": "^0.14.3",
         "react-transform-catch-errors": "^1.0.0",
         "react-transform-hmr": "^1.0.1",
         "redbox-react": "^1.2.0",
         "redux-devtools": "^2.1.5",
+        "rimraf": "^2.4.3",
+        "sinon": "^1.16.1",
+        "sinon-chai": "^2.8.0",
+        "stats-webpack-plugin": "^0.2.1",
         "style-loader": "^0.13.0",
         "webpack": "^1.12.8",
-        "webpack-dev-server": "^1.12.1"
+        "webpack-dev-middleware": "^1.2.0",
+        "webpack-hot-middleware": "^2.2.0"
     }
 }

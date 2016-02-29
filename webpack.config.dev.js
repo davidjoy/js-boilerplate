@@ -5,17 +5,17 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
-    entry  : [
-        'webpack-hot-middleware/client?reload=true',
+    devtool : 'eval',
+    entry   : [
+        'webpack-hot-middleware/client',
         path.join(__dirname, 'client/main.js')
     ],
-    output : {
+    output  : {
         path      : path.join(__dirname, '/dist/'),
         filename  : '[name].js',
         publicPath: '/'
     },
-    plugins: [
+    plugins : [
         new HtmlWebpackPlugin({
             template: 'client/index.tpl.html',
             inject  : 'body',
@@ -25,23 +25,25 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify('development'),
+            '__DEV__'             : JSON.stringify(process.env.NODE_ENV)
         })
     ],
-    module : {
+    module  : {
         loaders: [{
             test   : /\.js?$/,
             exclude: /node_modules/,
-            loader : 'babel?optional=es7.decorators'
+            loader : 'babel'
         }, {
             test  : /\.json?$/,
             loader: 'json'
         }, {
             test  : /\.css$/,
-            loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+            loader: 'style!css'
         }, {
             test  : /\.less$/,
-            loader: "style!css!less?modules&localIdentName=[name]---[local]---[hash:base64:5]"
+            loader: "style!css!less"
         }]
-    }
+    },
+    _hotPort: 8000
 };

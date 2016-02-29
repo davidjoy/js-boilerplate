@@ -1,36 +1,55 @@
-# react-et-al-boilerplate
+# node-boilerplate
 
-Boilerplate code for getting a React/Redux JavaScript application up and running that demonstrates the following:
+Boilerplate code for node web applications.  Includes:
 
-- Creating React components.
-- Creating a Redux store with multiple combined reducers.
-- Using reselect to write memoized selectors for derived data.
-- Hot reloading with webpack.
-- Dispatching Redux actions which get consumed by the store and used to update the React UI.
-- Sweet ES6+ JavaScript syntax via Babel.
+- babel
+- express
+- react
+- redux
+- reselect
+- memoizee
+- redux-router
+- isomorphic-fetch
+- webpack with:
+    - hot client reloading
+    - style-loader
+    - less-loader
+    - redbox-react
+    - production build
+- various testing goodies
 
-## To run
+## Setup
 
 - npm install
-- npm run dev
-- Visit http://localhost:8080/index.html in yo' browser.
 
-## Things to try
+## To run in development mode
 
-- Edit the text in one of the two boxes - note that "Hello World!" at the top follows along.
-- Edit some JS code or some CSS.  Watch the magic of hot reloading!
-- Use your browser's inspector to check out some code via the sourcemaps.
-- Get crazy with the React Devtools.
+- npm start
+- Visit http://localhost:8000
+
+## To build for production
+
+- npm run build
+
+## To run in production
+
+- npm run build:start
+- Visit http://localhost:8000
 
 ## Notes
 
-I won't claim this is the "right" way to set up a project - it makes sense to me though.  This is what I've cobbled together from my understanding of the above modules and the others that you'll find in package.json.  That said, I tried to follow their best practices and keep things simple but extensible.   
+I won't claim this is the "right" way to set up a project - it makes sense to me though, and it's what I use in my own projects.  Mostly I just want everything to be clear and in a reasonable place so I don't have to think about it.   
 
-I cribbed a lot off of https://github.com/erikras/react-redux-universal-hot-example for a lot of the more nitty-gritty configuration.  Thanks to erikras for such a stellar example of a ton of technologies.
+I cribbed a lot off of a few other boilerplate/example projects for a bunch of the nitty-gritty configuration.  Special thanks to:
 
-## Next
+- https://github.com/erikras/react-redux-universal-hot-example
+- https://github.com/christianalfoni/webpack-express-boilerplate
+- https://github.com/vesparny/react-kickstart
 
-- Adding asynchronous actions, isomorphic-fetch and a little express server.
-- memoizee for creating reselect selectors with memoized array elements
-- redux-router / react-router
-- Awesomesauce.
+I still find some of the webpack/express configuration a bit mystifying, so those projects helped out a ton.  Thanks!
+
+## Future
+
+- orm2 or sequelize
+- passport
+- isomorphic react

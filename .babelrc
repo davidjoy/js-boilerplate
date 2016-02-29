@@ -1,10 +1,5 @@
 {
     "stage": 0,
-    "optional": "runtime",
-    "loose": "all",
-    "plugins": [
-        "typecheck"
-    ],
     "env": {
         "development": {
             "plugins": [
@@ -12,15 +7,14 @@
             ],
             "extra": {
                 "react-transform": {
-                    "transforms": [
-                        {
-                            "transform": "react-transform-catch-errors",
-                            "imports": [
-                                "react",
-                                "redbox-react"
-                            ]
-                        }
-                    ]
+                    "transforms": [{
+                        "transform": "react-transform-hmr",
+                        "imports": ["react"],
+                        "locals": ["module"]
+                    }, {
+                        "transform": "react-transform-catch-errors",
+                        "imports": ["react", "redbox-react"]
+                    }]
                 }
             }
         }
