@@ -13,15 +13,15 @@ const app = express();
 if (isDeveloping) {
     const compiler = webpack(config);
     const middleware = webpackMiddleware(compiler, {
-        publicPath: config.output.publicPath,
+        publicPath : config.output.publicPath,
         contentBase: 'src',
-        stats: {
-            colors: true,
-            hash: false,
-            timings: true,
-            chunks: false,
+        stats      : {
+            colors      : true,
+            hash        : false,
+            timings     : true,
+            chunks      : false,
             chunkModules: false,
-            modules: false
+            modules     : false
         }
     });
 
@@ -31,10 +31,10 @@ if (isDeveloping) {
         res.send("<div>wooooot</div>");
     });
 
-    //app.get('*', function response(req, res) {
-    //    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
-    //    res.end();
-    //});
+    app.get('*', function response(req, res) {
+        res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
+        res.end();
+    });
 
 
 } else {
