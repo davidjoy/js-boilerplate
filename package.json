@@ -2,12 +2,12 @@
   "name": "js-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for JavaScript web applications.",
-  "main": "devServer.js",
+  "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --require ./test/test-init --compilers js:babel/register --recursive",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --require ./test/test-init --recursive",
-    "start": "node devServer",
-    "build:start": "NODE_ENV=production node prodServer",
+    "start": "NODE_ENV=development node server",
+    "build:start": "NODE_ENV=production node server",
     "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile --colors"
   },
   "author": "David Joy",
