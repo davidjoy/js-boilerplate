@@ -1,8 +1,8 @@
 {
-  "name": "node-boilerplate",
+  "name": "js-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for node web applications.",
-  "main": "server.js",
+  "description": "Boilerplate for JavaScript web applications.",
+  "main": "devServer.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --require ./test/test-init --compilers js:babel/register --recursive",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --require ./test/test-init --recursive",

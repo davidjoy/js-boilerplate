@@ -1,6 +1,6 @@
-# node-boilerplate
+# js-boilerplate
 
-Boilerplate code for node web applications.  Includes:
+Boilerplate code for JavaScript web applications.  Includes:
 
 - babel
 - express
