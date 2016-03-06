@@ -2,12 +2,14 @@ var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
+var webpackMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
 
 var app = express();
 
 var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
+var middleware = webpackMiddleware(compiler, {
   publicPath: config.output.publicPath,
   contentBase: 'client',
   stats: {
@@ -18,9 +20,15 @@ app.use(require('webpack-dev-middleware')(compiler, {
     chunkModules: false,
     modules: false
   }
-}));
+})
 
-app.use(require('webpack-hot-middleware')(compiler));
+app.use(middleware);
+app.use(webpackHotMiddleware(compiler));
+
+app.get('*', function response(req, res) {
+    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
+    res.end();
+});
 
 app.use(express.static(__dirname + '/dist'));
 
